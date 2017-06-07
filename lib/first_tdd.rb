@@ -1,4 +1,3 @@
-# require 'byebug'
 class Array
   def my_uniq
     uniqs = []
@@ -34,7 +33,6 @@ class Array
   end
 
   def my_stock_picker
-    # debugger
     most_profitable_pair = [0, 1]
     max_profit = self[1] - self[0]
 
