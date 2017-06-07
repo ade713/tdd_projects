@@ -1,3 +1,4 @@
+# require 'byebug'
 class Array
   def my_uniq
     uniqs = []
@@ -31,4 +32,22 @@ class Array
 
     transposed
   end
+
+  def my_stock_picker
+    # debugger
+    most_profitable_pair = [0, 1]
+    max_profit = self[1] - self[0]
+
+    (0...size-1).each do |idx1|
+      (idx1 + 1...size).each do |idx2|
+        if self[idx2] - self[idx1] > max_profit
+          most_profitable_pair = [idx1, idx2]
+          max_profit = self[idx2] - self[idx1]
+        end
+      end
+    end
+
+    most_profitable_pair
+  end
+
 end

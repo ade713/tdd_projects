@@ -28,6 +28,7 @@ describe Array do
     it "returns ordered pairs" do
       expect([1, -1, 3, -3, 5].two_sum).to eq([1, -1, 3, -3, 5].two_sum.sort)
     end
+  end
 
   describe "#my_transpose" do
     let (:arr) { [[1, 2, 3], [4, 5, 6], [7, 8, 9]]}
@@ -44,7 +45,20 @@ describe Array do
       expect(arr).not_to receive(:transpose)
     end
   end
-end
+
+  describe "#my_stock_picker" do
+    let (:stocks) { [5, 2, 4, 10, 1] }
+    it "picks the correct pair of dates" do
+      expect(stocks.my_stock_picker).to eq([1, 3])
+    end
+
+    it "doesn't pick stocks unable to buy" do
+      expect(stocks.my_stock_picker).not_to eq([4, 3])
+    end
+
+  end
+
+
 
 
 
